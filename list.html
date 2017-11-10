@@ -7,6 +7,9 @@
 	<!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Compiled and minified CSS -->
  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
@@ -16,7 +19,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 <body>
@@ -32,43 +35,65 @@
 	    </div>
 	</nav>
 
-	<div class="container">
-		<h4 id="shoppingHeader">Grocery Shopping List</h4>
-	</div>
+
+	<div class="wrapper">
+    <div class="container">
+
+     
+      <div class="jumbotron">
+        <h1 class="text-center">Grocery Shopping List</h1>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-12">
+
+        
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Recipe Items</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id='ingredient-table'>
+                <thead>
+                  <tr>
+                    <th>Ingredient</th>
+                    <th>Estimated Price</th>
+                    <th>Remove Item</th>
+                  </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                		<td>1 lb boneless Chicken as well as some measurements to add</td>
+                		<td>$5.99</td>
+                		<td><input type="checkbox" id="itemChecked"/><label for="itemChecked"></label></td>
+                	</tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Estimated Total Cost</strong></h3>
+            </div>
+            <div class="panel-body">
+            	<p id="totalPrice">$5.99</p>
+         	</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
 	
-
-	<div class="container" id="table">
-		<table id="ingredient-table" class="bordered highlight responsive-table">
-	        <thead>
-	          <tr>
-	              <th>Ingredient</th>
-	              <th>Estimated Price</th>
-	              <th>Remove Item</th>
-	          </tr>
-	        </thead>
-
-	        <tbody>
-	          <tr>
-	            <td>Chicken boneless 1 lb</td>
-	            <td>$5.99</td>
-	            <td>
-	            	<input type="checkbox" id="itemChecked"/><label for="itemChecked"></label>
-	            </td>
-	          </tr>
-	        </tbody>
-	    </table>
-
-	</div>
-
-	<div class="container" id="totalCost">
-		<p>Total Estimated Price: $5.99</p>
-	</div>
 
 
 
 	<!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+ <!--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script> -->
 
 
 <!-- $("ingredient-table > tbody").append("<tr><td>" + ingredient variable) + "</td><td>" + price variable + 
