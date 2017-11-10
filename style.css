@@ -1,0 +1,30 @@
+#table {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #8C8B8B;
+	margin-top: 30px;
+}
+
+#totalCost {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #8C8B8B;
+	margin-top: 30px;
+}
+
+nav {
+	background-color: #a5d6a7;
+}
+
+#shoppingHeader {
+	text-align: center;
+	margin-top: 50px;
+}
+
+p {
+	text-align: left;
+	padding-left: 8px;
+	font-weight: bold;
+}
+
+/*#b0bec5*/

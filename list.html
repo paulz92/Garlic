@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>List Page</title>
+
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+ 	 <!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	
+	<nav>
+	    <div class="nav-wrapper">
+	      <a href="#" class="brand-logo">GARLIC</a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="sass.html">Search</a></li>
+	        <li><a href="badges.html">Review</a></li>
+	        <li><a href="collapsible.html">List</a></li>
+	      </ul>
+	    </div>
+	</nav>
+
+	<div class="container">
+		<h4 id="shoppingHeader">Grocery Shopping List</h4>
+	</div>
+	
+
+	<div class="container" id="table">
+		<table id="ingredient-table" class="bordered highlight responsive-table">
+	        <thead>
+	          <tr>
+	              <th>Ingredient</th>
+	              <th>Estimated Price</th>
+	              <th>Remove Item</th>
+	          </tr>
+	        </thead>
+
+	        <tbody>
+	          <tr>
+	            <td>Chicken boneless 1 lb</td>
+	            <td>$5.99</td>
+	            <td>
+	            	<input type="checkbox" id="itemChecked"/><label for="itemChecked"></label>
+	            </td>
+	          </tr>
+	        </tbody>
+	    </table>
+
+	</div>
+
+	<div class="container" id="totalCost">
+		<p>Total Estimated Price: $5.99</p>
+	</div>
+
+
+
+	<!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+<!-- $("ingredient-table > tbody").append("<tr><td>" + ingredient variable) + "</td><td>" + price variable + 
+"</td><td>" + "<input type="checkbox" id="itemChecked"/><label for="itemChecked"></label>" + "</td><tr>"); -->
+
+
+</body>
+</html>
