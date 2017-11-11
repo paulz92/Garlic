@@ -1,60 +1,25 @@
-nav .nav-wrapper {
-	padding-left: 35px;
-	padding-right: 35px;
-}
-
-nav {
+nav{
 	background-color: #a5d6a7;
 }
 
 nav ul a {
-	font-size: 19px;
+	
 }
 
-
-/*body { 
-  background: url(../images/wallpaper.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-*/
-.container {
-	margin-top: 40px;
-	margin-bottom: 40px;
+nav .brand-logo{
+	margin-left: 10px;
 }
 
-.panel-primary>.panel-heading {
-	background-color: #a5d6a7;
-    border-color: #a5d6a7;
-    font-size: 20px;
+.carousel carousel-slider{
+	margin-top: 5px;
 }
 
-.jumbotron {
+h3{
+	width: 1000px;
+	padding:10px;
 	background-color: #b0bec5;
-    color: white;
-    padding: 10px;
-    border: black;
-    border-style: solid;
-    border-width: 1px;
-}
-
-.panel-primary {
-	opacity: .9;
-	border-color: black;
-}
-
-.panel-body {
-	background: whitesmoke;
-	font-size: 18px;
-}
-
-.panel-title {
-	font-size: 25px;
-}
-
-p {
-	font-weight: bold;
-	font-size: 25px;
+	color: white;
+	border-radius: 20px;
+	text-align: center;
+	margin-left: 90px
 }
