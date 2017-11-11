@@ -5,7 +5,6 @@ $('.carousel.carousel-slider').carousel({fullWidth: true});
 
 $('select').material_select();
 
-
 });
 
 
