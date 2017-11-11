@@ -11,22 +11,15 @@ nav ul a {
 	font-size: 19px;
 }
 
-/*body {
-	background-image: url(../images/wallpaper.jpg);
-	width: 100%;
-	height: auto;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-}*/
 
-body { 
+/*body { 
   background: url(../images/wallpaper.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
+*/
 .container {
 	margin-top: 40px;
 	margin-bottom: 40px;
