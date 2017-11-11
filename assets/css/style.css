@@ -60,6 +60,8 @@ h3{
 	margin-left: 90px
 }
 
+
+
 p{
 	vertical-align: middle;
 }
@@ -74,6 +76,25 @@ p{
 	font-size: 25px;
 }
 
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #a5d6a7;
+    border-color: #a5d6a7;
+}
+
+.panel-primary {
+    border-color: black;
+}
+
+h4{
+	padding:10px;
+	background-color: #b0bec5;
+	color: white;
+	border-radius: 20px;
+	text-align: center;
+	margin-left: 50px;
+	margin-right: 50px;
+}
 
 .carousel carousel-slider{
 	margin-top: 5px;
