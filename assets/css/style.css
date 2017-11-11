@@ -1,14 +1,9 @@
-nav .nav-wrapper {
-	padding-left: 35px;
-	padding-right: 35px;
-}
-
-nav {
+nav{
 	background-color: #a5d6a7;
 }
 
 nav ul a {
-	font-size: 19px;
+	
 }
 
 
@@ -47,25 +42,28 @@ body {
 	margin-bottom: 40px;
 }
 
-.panel-primary>.panel-heading {
-	background-color: #a5d6a7;
-    border-color: #a5d6a7;
-    font-size: 20px;
+nav .brand-logo {
+	margin-left: 10px;
 }
 
-.jumbotron {
+.carousel carousel-slider{
+	margin-top: 5px;
+}
+
+h3{
+	width: 1000px;
+	padding:10px;
 	background-color: #b0bec5;
-    color: white;
-    padding: 10px;
-    border: black;
-    border-style: solid;
-    border-width: 1px;
+	color: white;
+	border-radius: 20px;
+	text-align: center;
+	margin-left: 90px
 }
 
-.panel-primary {
-	opacity: .9;
-	border-color: black;
+p{
+	vertical-align: middle;
 }
+
 
 .panel-body {
 	background: whitesmoke;
