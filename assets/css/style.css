@@ -6,7 +6,43 @@ nav ul a {
 	
 }
 
-nav .brand-logo{
+
+/*body { 
+  background: url(../images/wallpaper.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+*/
+.form-group {
+	width: 650px;
+
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+#googleMaps {
+	border-width: 1px;
+	border-style: solid;
+	height: 300px;
+	width: 650px;
+	text-align: center;
+}
+
+.col-lg-7, .col-lg-5 {
+	padding-left: 75px;
+	padding-right: 75px;
+}
+
+.wrapper {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+nav .brand-logo {
 	margin-left: 10px;
 }
 
@@ -26,4 +62,25 @@ h3{
 
 p{
 	vertical-align: middle;
+}
+
+
+.panel-body {
+	background: whitesmoke;
+	font-size: 18px;
+}
+
+.panel-title {
+	font-size: 25px;
+}
+
+
+.carousel carousel-slider{
+	margin-top: 5px;
+}
+
+
+p {
+	font-weight: bold;
+	font-size: 25px;
 }
