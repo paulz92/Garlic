@@ -19,7 +19,10 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 
 </head>
 <body>
@@ -28,25 +31,34 @@
 	    <div class="nav-wrapper">
 	      <a href="#" class="brand-logo">GARLIC</a>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	        <li><a href="sass.html">Search</a></li>
-	        <li><a href="badges.html">Review</a></li>
-	        <li><a href="collapsible.html">List</a></li>
+	        <li><a href="index.html">Search</a></li>
+	        <li><a href="review.html">Review</a></li>
+	        <li><a href="list.html">List</a></li>
 	      </ul>
 	    </div>
 	</nav>
 
 
 	<div class="wrapper">
-    <div class="container">
 
-     
-      <div class="jumbotron">
-        <h1 class="text-center">Grocery Shopping List</h1>
-      </div>
+     	<div class="row">
+     		<div class="col-lg-7">
+	      		<div class="jumbotron">
+	        		<h3 class="text-center">Shopping List</h3>
+	      		</div>
+	      	</div>
+			<div class="col-lg-5">
+				<div class="jumbotron">
+	        		<h3 class="text-center">Store Locations</h3>
+	      		</div>
+	      	</div>
+	    </div>
+
+
 
       <div class="row">
 
-        <div class="col-lg-12">
+        <div class="col-lg-7">
 
         
           <div class="panel panel-primary">
@@ -83,9 +95,18 @@
          	</div>
           </div>
         </div>
+
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="form-group">
+    				<input type="name" class="form-control" id="zipCode" placeholder="Search Zip Code">
+  				</div>
+  				<div id="googleMaps">Google Map goes here</div>
+  			</div>
+  		</div>
+
       </div>
 
-    </div>
     </div>
 	
 
