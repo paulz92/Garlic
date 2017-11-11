@@ -1,3 +1,4 @@
+// when submit button is clicked on search page
 $("#submit").on("click", function() {
 	// edamam api
 	// grabbing search vals from input boxes/search bar
@@ -39,6 +40,7 @@ $("#submit").on("click", function() {
 		// logs response
 		console.log(response);
 
+		// saving response hits as variable
 		var data = response.hits;
 
 		// for loop logging the different recipe names
