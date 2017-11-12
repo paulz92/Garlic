@@ -6,6 +6,33 @@ nav ul a {
 	
 }
 
+/*Welcome to garlic card on search/ home screen*/
+.introCard{
+	font-weight: normal;
+	font-size: 15px;
+}
+
+
+/*Makes the Calorie and Serving Size on results smaller*/
+.recipe-info{
+	font-size: 15px;
+
+}
+
+/*makes the ingredients font smaller in the search return*/
+.ingredient{
+	font-size:17px;
+}
+
+/*Bolds the recipe name on the results cards*/
+.recipe-name{
+	font-weight:bold;
+}
+
+/*changes the color of the submit button*/
+#submit{
+	background-color: #a5d6a7;
+}
 
 /*body { 
   background: url(../images/wallpaper.jpg) no-repeat center center fixed; 
@@ -42,6 +69,7 @@ body {
 	margin-bottom: 40px;
 }
 
+/* moves GARLIC on nav bar to the right*/
 nav .brand-logo {
 	margin-left: 10px;
 }
@@ -50,6 +78,8 @@ nav .brand-logo {
 	margin-top: 5px;
 }
 
+
+/*Reveiws page header*/
 h3{
 	width: 1000px;
 	padding:10px;
@@ -94,10 +124,6 @@ h4{
 	text-align: center;
 	margin-left: 50px;
 	margin-right: 50px;
-}
-
-.carousel carousel-slider{
-	margin-top: 5px;
 }
 
 
