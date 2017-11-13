@@ -226,7 +226,7 @@ $(document).on("click", ".add-to-list", function(event) {
 	event.preventDefault();
 	// splitting data attribute list at --, so that it saves 
 	// as an array
-	var val = $(this).attr("data-list").split("--");
+	var val = $(this).attr("data-list").split("--,");
 	// setting shopList equal to the val array
 	shopList = val;
 	// setting local storage item to the shop list
