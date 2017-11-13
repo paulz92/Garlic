@@ -41,7 +41,8 @@ $("#submit-search").on("click", function() {
 		console.log(response);
 		// if search populates no recipes
 		if (response.hits.length === 0) {
-			$(".recipes-1").text("No recipes found, please search again.");
+			$(".recipes-1").text("No recipes found, please search again. " 
+				+ "If not filtering by health or diet labels, please select 'None'.");
 		} // if search populates recipes
 		else {
 			// saving response hits as variable
@@ -103,7 +104,8 @@ $("#submit-search").on("click", function() {
 					ingredient.addClass("ingredient");
 					ingredient.text(data[i].recipe.ingredientLines[j]);
 					cardContent.append(ingredient);
-					list.push(data[i].recipe.ingredientLines[j] + "--");
+					// adding the two blank spices for future splicing of this array
+					list.push(data[i].recipe.ingredientLines[j] + "  ");
 				}
 				// appending card content to card div
 				card.append(cardContent);
@@ -184,7 +186,7 @@ function displayList() {
     insideIngredients = [];
   }
   // render our insideList ingredients to the table on the page
-  for (var i = 0; i < insideIngredients.length - 1; i++) {
+  for (var i = 0; i < insideIngredients.length; i++) {
   	var tr = $("<tr>"); // create table row
   	var tdIngredient = $("<td>"); // create table data for ingredient
   	tdIngredient.text(insideIngredients[i]); // td text is ingredient
@@ -224,9 +226,9 @@ $(document).on("click", ".remove-item", function(event) {
 $(document).on("click", ".add-to-list", function(event) {
 	// prevent default
 	event.preventDefault();
-	// splitting data attribute list at --, so that it saves 
+	// splitting data attribute list at "  ,"" so that it saves
 	// as an array
-	var val = $(this).attr("data-list").split("--,");
+	var val = $(this).attr("data-list").split("  ,");
 	// setting shopList equal to the val array
 	shopList = val;
 	// setting local storage item to the shop list
