@@ -39,116 +39,122 @@ $("#submit-search").on("click", function() {
 	.done(function(response) {
 		// logs response
 		console.log(response);
-		// saving response hits as variable
-		var data = response.hits;
-		// clearing html for recipes-1 and recipes-2
-		$(".recipes-1").html("");
-		$(".recipes-2").html("");
-		// creating a function to display recipe data in a card
-		var createCard = function() {
-			// writing to browser
-			// creating card div
-			var card = $("<div>");
-			card.addClass("card");
-			// creating card image div
-			var cardImage = $("<div>");
-			cardImage.addClass("card-image");
-			// creating recipe image equal to response image
-			var recipePic = $("<img>");
-			recipePic.attr("src", data[i].recipe.image);
-			// creating div for card title and info
-			var cardText = $("<div>");
-			cardText.addClass("card-title");
-			// creating card title equal to recipe name
-			var cardTitle = $("<span>");
-			cardTitle.addClass("recipe-name");
-			cardTitle.text(data[i].recipe.label);
-			// creating page break
-			var pageBreak1 = $("<br>");
-			var pageBreak2 = $("<br>");
-			// creating serving info title
-			var servingInfo = $("<span>");
-			servingInfo.addClass("recipe-info");
-			servingInfo.text("Serves: " + data[i].recipe.yield);
-			// creating calorie info title
-			var calorieInfo = $("<span>");
-			calorieInfo.addClass("recipe-info");
-			calorieInfo.text("Calories: " + 
-				Math.round(data[i].recipe.calories/data[i].recipe.yield));
-			// appending card title and recipe info to card text
-			cardText.append(cardTitle);
-			cardText.append(pageBreak1);
-			cardText.append(servingInfo);
-			cardText.append(pageBreak2);
-			cardText.append(calorieInfo);
-			// appending recipe pic and title to card image div
-			cardImage.append(recipePic);
-			cardImage.append(cardText);
-			// appending card Image div to card div
-			card.append(cardImage);
-			// creating card content div
-			var cardContent = $("<div>");
-			cardContent.addClass("card-content");
-			// creating an ingredient array for ingredients and
-			// creating a paragraph and appending to card content for
-			// each ingredient and pushing ingredient to list array
-			var list = [];
-			for (var j = 0; j < data[i].recipe.ingredientLines.length; j++) {
-				var ingredient = $("<p>");
-				ingredient.addClass("ingredient");
-				ingredient.text(data[i].recipe.ingredientLines[j]);
-				cardContent.append(ingredient);
-				list.push(data[i].recipe.ingredientLines[j] + "--");
+		// if search populates no recipes
+		if (response.hits.length === 0) {
+			$(".recipes-1").text("No recipes found, please search again.");
+		} // if search populates recipes
+		else {
+			// saving response hits as variable
+			var data = response.hits;
+			// clearing html for recipes-1 and recipes-2
+			$(".recipes-1").html("");
+			$(".recipes-2").html("");
+			// creating a function to display recipe data in a card
+			var createCard = function() {
+				// writing to browser
+				// creating card div
+				var card = $("<div>");
+				card.addClass("card");
+				// creating card image div
+				var cardImage = $("<div>");
+				cardImage.addClass("card-image");
+				// creating recipe image equal to response image
+				var recipePic = $("<img>");
+				recipePic.attr("src", data[i].recipe.image);
+				// creating div for card title and info
+				var cardText = $("<div>");
+				cardText.addClass("card-title");
+				// creating card title equal to recipe name
+				var cardTitle = $("<span>");
+				cardTitle.addClass("recipe-name");
+				cardTitle.text(data[i].recipe.label);
+				// creating page break
+				var pageBreak1 = $("<br>");
+				var pageBreak2 = $("<br>");
+				// creating serving info title
+				var servingInfo = $("<span>");
+				servingInfo.addClass("recipe-info");
+				servingInfo.text("Serves: " + data[i].recipe.yield);
+				// creating calorie info title
+				var calorieInfo = $("<span>");
+				calorieInfo.addClass("recipe-info");
+				calorieInfo.text("Calories: " + 
+					Math.round(data[i].recipe.calories/data[i].recipe.yield));
+				// appending card title and recipe info to card text
+				cardText.append(cardTitle);
+				cardText.append(pageBreak1);
+				cardText.append(servingInfo);
+				cardText.append(pageBreak2);
+				cardText.append(calorieInfo);
+				// appending recipe pic and title to card image div
+				cardImage.append(recipePic);
+				cardImage.append(cardText);
+				// appending card Image div to card div
+				card.append(cardImage);
+				// creating card content div
+				var cardContent = $("<div>");
+				cardContent.addClass("card-content");
+				// creating an ingredient array for ingredients and
+				// creating a paragraph and appending to card content for
+				// each ingredient and pushing ingredient to list array
+				var list = [];
+				for (var j = 0; j < data[i].recipe.ingredientLines.length; j++) {
+					var ingredient = $("<p>");
+					ingredient.addClass("ingredient");
+					ingredient.text(data[i].recipe.ingredientLines[j]);
+					cardContent.append(ingredient);
+					list.push(data[i].recipe.ingredientLines[j] + "--");
+				}
+				// appending card content to card div
+				card.append(cardContent);
+				// creating card action div
+				var cardAction = $("<div>");
+				cardAction.addClass("card-action");
+				// creating link equal to recipe link, opening link in new
+				// tab, giving it text, appending to card action
+				var recipeLink = $("<a>");
+				recipeLink.attr("href", data[i].recipe.shareAs);
+				recipeLink.attr("target", "_blank");
+				recipeLink.text("Make this recipe!");
+				cardAction.append(recipeLink);
+				// var break
+				var pageBreak = $("<br>");
+				cardAction.append(pageBreak);
+				// add to list link, giving it a data attribute list equal
+				// to list array of ingredients
+				var addToList = $("<a>");
+				addToList.addClass("add-to-list");
+				addToList.attr("href", "#");
+				addToList.attr("data-list", list);
+				addToList.text("Add to shopping list");
+				cardAction.append(addToList);
+				// appending card action to card div
+				card.append(cardAction);
+				// appending card div to column
+				column.append(card);
+			};
+
+			// for loop for the first 2 recipes to add to first recipe row
+			for (var i = 0; i < 2; i++) {
+				// creating column div with materialize size
+				var column = $("<div>");
+				column.addClass("col s6");
+				// running create card function
+				createCard();
+				// appending column to recipes div
+				$(".recipes-1").append(column);
 			}
-			// appending card content to card div
-			card.append(cardContent);
-			// creating card action div
-			var cardAction = $("<div>");
-			cardAction.addClass("card-action");
-			// creating link equal to recipe link, opening link in new
-			// tab, giving it text, appending to card action
-			var recipeLink = $("<a>");
-			recipeLink.attr("href", data[i].recipe.shareAs);
-			recipeLink.attr("target", "_blank");
-			recipeLink.text("Make this recipe!");
-			cardAction.append(recipeLink);
-			// var break
-			var pageBreak = $("<br>");
-			cardAction.append(pageBreak);
-			// add to list link, giving it a data attribute list equal
-			// to list array of ingredients
-			var addToList = $("<a>");
-			addToList.addClass("add-to-list");
-			addToList.attr("href", "#");
-			addToList.attr("data-list", list);
-			addToList.text("Add to shopping list");
-			cardAction.append(addToList);
-			// appending card action to card div
-			card.append(cardAction);
-			// appending card div to column
-			column.append(card);
-		};
 
-		// for loop for the first 2 recipes to add to first recipe row
-		for (var i = 0; i < 2; i++) {
-			// creating column div with materialize size
-			var column = $("<div>");
-			column.addClass("col s6");
-			// running create card function
-			createCard();
-			// appending column to recipes div
-			$(".recipes-1").append(column);
-		}
-
-    // for loop for the last 2 recipes to add to first recipe row
-		for (var i = 2; i < 4; i++) {
-			// creating column div with materialize size
-			var column = $("<div>");
-			column.addClass("col s6");
-			// running create card function
-			createCard();
-			// appending column to recipes div
-			$(".recipes-2").append(column);
+	    // for loop for the last 2 recipes to add to first recipe row
+			for (var i = 2; i < 4; i++) {
+				// creating column div with materialize size
+				var column = $("<div>");
+				column.addClass("col s6");
+				// running create card function
+				createCard();
+				// appending column to recipes div
+				$(".recipes-2").append(column);
+			}
 		}
 	});
 });
@@ -221,7 +227,7 @@ $(document).on("click", ".add-to-list", function(event) {
 	// splitting data attribute list at --, so that it saves 
 	// as an array
 	var val = $(this).attr("data-list").split("--,");
-	// pushing the array into the shopList var
+	// setting shopList equal to the val array
 	shopList = val;
 	// setting local storage item to the shop list
 	localStorage.setItem("shopping-list", JSON.stringify(shopList));
