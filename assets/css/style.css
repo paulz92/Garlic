@@ -1,4 +1,4 @@
-nav{
+nav {
 	background-color: #a5d6a7;
 }
 
@@ -6,31 +6,35 @@ nav ul a {
 	
 }
 
+.welcome-card {
+	height: 392px;
+}
+
 /*Welcome to garlic card on search/ home screen*/
-.introCard{
+.introCard {
 	font-weight: normal;
 	font-size: 15px;
 }
 
 
 /*Makes the Calorie and Serving Size on results smaller*/
-.recipe-info{
+.recipe-info {
 	font-size: 15px;
 
 }
 
 /*makes the ingredients font smaller in the search return*/
-.ingredient{
+.ingredient {
 	font-size:17px;
 }
 
 /*Bolds the recipe name on the results cards*/
-.recipe-name{
+.recipe-name {
 	font-weight:bold;
 }
 
 /*changes the color of the submit button*/
-#submit{
+#submit {
 	background-color: #a5d6a7;
 }
 
@@ -74,13 +78,17 @@ nav .brand-logo {
 	margin-left: 10px;
 }
 
-.carousel carousel-slider{
+.carousel .carousel-slider {
 	margin-top: 5px;
+}
+
+img.carousel-item {
+	margin-top: 8px;
 }
 
 
 /*Reveiws page header*/
-h3{
+h3 {
 	width: 1000px;
 	padding:10px;
 	background-color: #b0bec5;
@@ -92,7 +100,7 @@ h3{
 
 
 
-p{
+p {
 	vertical-align: middle;
 }
 
@@ -107,17 +115,17 @@ p{
 }
 
 .panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #a5d6a7;
-    border-color: #a5d6a7;
+  color: #fff;
+  background-color: #a5d6a7;
+  border-color: #a5d6a7;
 }
 
 .panel-primary {
-    border-color: black;
+  border-color: black;
 }
 
-h4{
-	padding:10px;
+h4 {
+	padding: 10px;
 	background-color: #b0bec5;
 	color: white;
 	border-radius: 20px;

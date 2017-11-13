@@ -89,13 +89,16 @@ $("#submit").on("click", function() {
 			// creating card content div
 			var cardContent = $("<div>");
 			cardContent.addClass("card-content");
+			// creating an ingredient array for ingredients and
 			// creating a paragraph and appending to card content for
-			// each ingredient
+			// each ingredient and pushing ingredient to list array
+			var list = [];
 			for (var j = 0; j < data[i].recipe.ingredientLines.length; j++) {
 				var ingredient = $("<p>");
 				ingredient.addClass("ingredient");
 				ingredient.text(data[i].recipe.ingredientLines[j]);
 				cardContent.append(ingredient);
+				list.push(data[i].recipe.ingredientLines[j] + "--");
 			}
 			// appending card content to card div
 			card.append(cardContent);
@@ -112,9 +115,12 @@ $("#submit").on("click", function() {
 			// var break
 			var pageBreak = $("<br>");
 			cardAction.append(pageBreak);
-			// add to list link
+			// add to list link, giving it a data attribute list equal
+			// to list array of ingredients
 			var addToList = $("<a>");
+			addToList.addClass("add-to-list");
 			addToList.attr("href", "#");
+			addToList.attr("data-list", list);
 			addToList.text("Add to shopping list");
 			cardAction.append(addToList);
 			// appending card action to card div
@@ -146,6 +152,34 @@ $("#submit").on("click", function() {
 		}
 	});
 });
+
+////////////////////////////////////////////////////////////////////////////////
+
+// saving ingredients as array in local storage and displaying
+// them on the list page
+
+var shopList = localStorage.getItem("test7-list");
+// checks to see if ingredients list is an array in local storage
+// if not, sets local shopList to an empty array
+// otherwise, shopList is our current list of ingredients per above
+// shop list variable
+if (!Array.isArray(shopList)) {
+      shopList = [];
+    }
+
+// when user clicks add to lits...
+$(document).on("click", ".add-to-list", function(event) {
+	// prevent default
+	event.preventDefault();
+	// splitting data attribute list at -- so that it saves 
+	// as an array
+	var val = $(this).attr("data-list").split("--,");
+	// pushing the array into the shopList var
+	shopList.push(val);
+	// setting local storage item to the shop list
+	localStorage.setItem("test7-list", JSON.stringify(shopList));
+});
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
