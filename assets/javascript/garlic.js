@@ -39,16 +39,14 @@ $("#submit").on("click", function() {
 	.done(function(response) {
 		// logs response
 		console.log(response);
-
 		// saving response hits as variable
 		var data = response.hits;
-
-		// for loop logging the different recipe names
-		for (var i = 0; i < data.length; i++) {
+		// clearing html for recipes-1 and recipes-2
+		$(".recipes-1").html("");
+		$(".recipes-2").html("");
+		// creating a function to display recipe data in a card
+		var createCard = function() {
 			// writing to browser
-			// creating column div with materialize size
-			var column = $("<div>");
-			column.addClass("col s3");
 			// creating card div
 			var card = $("<div>");
 			card.addClass("card");
@@ -66,16 +64,23 @@ $("#submit").on("click", function() {
 			cardTitle.addClass("recipe-name");
 			cardTitle.text(data[i].recipe.label);
 			// creating page break
-			var pageBreak = $("<br>");
-			// creating recipe info title
-			var recipeInfo = $("<span>");
-			recipeInfo.addClass("recipe-info");
-			recipeInfo.text("Serves: " + data[i].recipe.yield + " Calories: " + 
-				Math.round(data[i].recipe.calories/data[i].recipe.yield))
+			var pageBreak1 = $("<br>");
+			var pageBreak2 = $("<br>");
+			// creating serving info title
+			var servingInfo = $("<span>");
+			servingInfo.addClass("recipe-info");
+			servingInfo.text("Serves: " + data[i].recipe.yield);
+			// creating calorie info title
+			var calorieInfo = $("<span>");
+			calorieInfo.addClass("recipe-info");
+			calorieInfo.text("Calories: " + 
+				Math.round(data[i].recipe.calories/data[i].recipe.yield));
 			// appending card title and recipe info to card text
 			cardText.append(cardTitle);
-			cardText.append(pageBreak);
-			cardText.append(recipeInfo);
+			cardText.append(pageBreak1);
+			cardText.append(servingInfo);
+			cardText.append(pageBreak2);
+			cardText.append(calorieInfo);
 			// appending recipe pic and title to card image div
 			cardImage.append(recipePic);
 			cardImage.append(cardText);
@@ -116,36 +121,28 @@ $("#submit").on("click", function() {
 			card.append(cardAction);
 			// appending card div to column
 			column.append(card);
-			// appending column to recipes div
-			$(".recipes").append(column);
+		};
 
-			// console logs
-			// logs recipe name
-			console.log("Recipe Name: " 
-				+ data[i].recipe.label);
-			// nested for loop for looping through the ingredients in each recipe
-			for (var j = 0; j < data[i].recipe.ingredientLines.length; j++) {
-				console.log("Ingredients: " 
-					+ data[i].recipe.ingredientLines[j]);
-			}
-			// logs number of servings
-			console.log("Serves: "
-				+ data[i].recipe.yield);
-			// logs image url
-			console.log("Image: " 
-				+ data[i].recipe.image);
-			// logs link to recipe
-			console.log("Link: "
-				+ data[i].recipe.shareAs);
-			// logs health labels
-			console.log("Health Labels: " 
-				+ data[i].recipe.healthLabels);
-			// logs diet labels
-			console.log("Diet Labels: " 
-				+ data[i].recipe.dietLabels);
-			console.log("Calories per serving: "
-				+ Math.round(data[i].recipe.calories/data[i].recipe.yield));
-			console.log("========================================================");
+		// for loop for the first 2 recipes to add to first recipe row
+		for (var i = 0; i < 2; i++) {
+			// creating column div with materialize size
+			var column = $("<div>");
+			column.addClass("col s6");
+			// running create card function
+			createCard();
+			// appending column to recipes div
+			$(".recipes-1").append(column);
+		}
+
+    // for loop for the last 2 recipes to add to first recipe row
+		for (var i = 2; i < 4; i++) {
+			// creating column div with materialize size
+			var column = $("<div>");
+			column.addClass("col s6");
+			// running create card function
+			createCard();
+			// appending column to recipes div
+			$(".recipes-2").append(column);
 		}
 	});
 });
