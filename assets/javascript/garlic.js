@@ -1,5 +1,5 @@
 // when submit button is clicked on search page
-$("#submit").on("click", function() {
+$("#submit-search").on("click", function() {
 	// edamam api
 	// grabbing search vals from input boxes/search bar
 	var foodSearch = $("#search").val().trim();
@@ -158,26 +158,58 @@ $("#submit").on("click", function() {
 // saving ingredients as array in local storage and displaying
 // them on the list page
 
-var shopList = localStorage.getItem("test7-list");
+var shopList = localStorage.getItem("shopping-list");
 // checks to see if ingredients list is an array in local storage
 // if not, sets local shopList to an empty array
 // otherwise, shopList is our current list of ingredients per above
 // shop list variable
 if (!Array.isArray(shopList)) {
       shopList = [];
-    }
+}
 
-// when user clicks add to lits...
+// function to display shopping list to list page
+function displayList() {
+	$("#ingredient-data").html(""); // empties table html
+	var insideIngredients = JSON.parse(localStorage.getItem("shopping-list"));
+	// Checks to see if we have any ingredients in localStorage
+  // If we do, set the local insideIngredients variable to our todos
+  // Otherwise set the local insideIngredients variable to an empty array
+  if (!Array.isArray(insideIngredients)) {
+    insideIngredients = [];
+  }
+  // render our insideList todos to the page
+  for (var i = 0; i < insideIngredients[0].length; i++) {
+  	var tr = $("<tr>");
+  	var tdIngredient = $("<td>");
+  	tdIngredient.text(insideIngredients[0][i]);
+  	var tdPrice = $("<td>");
+  	tdPrice.text("$$.cc");
+  	var tdRemove = $("<td>");
+  	tdRemove.html("<input type='checkbox' id='itemChecked'/><label for='itemChecked'></label>");
+    tr.append(tdIngredient);
+    tr.append(tdPrice);
+    tr.append(tdRemove);
+    $("#ingredient-data").append(tr);
+  }
+};
+
+// render ingredients on page load
+displayList();
+
+// when user clicks add to list...
 $(document).on("click", ".add-to-list", function(event) {
 	// prevent default
 	event.preventDefault();
-	// splitting data attribute list at -- so that it saves 
+	// splitting data attribute list at --, so that it saves 
 	// as an array
 	var val = $(this).attr("data-list").split("--,");
 	// pushing the array into the shopList var
 	shopList.push(val);
 	// setting local storage item to the shop list
-	localStorage.setItem("test7-list", JSON.stringify(shopList));
+	localStorage.setItem("shopping-list", JSON.stringify(shopList));
+	// change text letting user know it was successfully added to list
+	$(this).text("Successfully added to list!");
+	displayList();
 });
 
 
