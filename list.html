@@ -40,6 +40,7 @@
 	  </div>
 
     <div class="row">
+      <!-- list column -->
       <div class="col-lg-7">
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -50,38 +51,27 @@
               <thead>
                 <tr>
                   <th>Ingredient</th>
-                  <th>Estimated Price</th>
                   <th>Remove Item</th>
                 </tr>
               </thead>
               <tbody id="ingredient-data">
-              	<tr>
-               		<td>1 lb boneless Chicken as well as some measurements to add</td>
-               		<td>$5.99</td>
-               		<td><input type="checkbox" id="itemChecked"/><label for="itemChecked"></label></td>
-               	</tr>
+                <!-- jquery will populate the data -->
               </tbody>
             </table>
           </div>
         </div>
-  
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h5 class="panel-title"><strong>Estimated Total Cost</strong></h5>
-          </div>
-          <div class="panel-body">
-          	<p id="totalPrice">$5.99</p>
-        	</div>
-        </div>
       </div>
-
+      
+      <!-- maps column -->
 		  <div class="col-lg-5">
 		   	<div class="form-group">
  		  		<input type="name" class="form-control" id="zipCode" placeholder="Search Zip Code">
  			  </div>
  			  <div id="googleMaps">Google Map goes here</div>
  			</div>
+    <!-- close row -->
     </div>
+  <!-- close wrapper -->
   </div>
 	
 

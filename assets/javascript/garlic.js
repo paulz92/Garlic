@@ -177,24 +177,42 @@ function displayList() {
   if (!Array.isArray(insideIngredients)) {
     insideIngredients = [];
   }
-  // render our insideList todos to the page
-  for (var i = 0; i < insideIngredients[0].length; i++) {
-  	var tr = $("<tr>");
-  	var tdIngredient = $("<td>");
-  	tdIngredient.text(insideIngredients[0][i]);
-  	var tdPrice = $("<td>");
-  	tdPrice.text("$$.cc");
-  	var tdRemove = $("<td>");
-  	tdRemove.html("<input type='checkbox' id='itemChecked'/><label for='itemChecked'></label>");
+  // render our insideList todos to the table on the page
+  for (var i = 0; i < insideIngredients.length; i++) {
+  	var tr = $("<tr>"); // create table row
+  	var tdIngredient = $("<td>"); // create table data for ingredient
+  	tdIngredient.text(insideIngredients[i]); // td text is ingredient
+  	var tdRemove = $("<td>"); // create table data for remove button
+  	// remove button with class remove item and data index equal to i
+  	tdRemove.html("<button class='remove-item'"
+  		 + "data-index='" + i + "' id='remove-button'>X</button>"); 
+  	// appending the td to the tr  
     tr.append(tdIngredient);
-    tr.append(tdPrice);
     tr.append(tdRemove);
+    // appending tr to the table body
     $("#ingredient-data").append(tr);
   }
 };
 
 // render ingredients on page load
 displayList();
+
+// function for removing item from list
+$(document).on("click", ".remove-item", function(event) {
+	// temp variable to store local storage array
+	var ingredientList = JSON.parse(localStorage.getItem("shopping-list"));
+	// current index equal to the data-index attribute of clicked item
+  var currentIndex = $(this).attr("data-index");
+  // Deletes the item marked for deletion by splicing at current index
+  // and deleting it
+  ingredientList.splice(currentIndex, 1);
+  // setting shopList equal to ingredient list with deleted item
+  shopList = ingredientList;
+  // setting local storage euqal to ingredient list of deleted item
+  localStorage.setItem("shopping-list", JSON.stringify(ingredientList));
+  // running display function
+	displayList();
+});
 
 // when user clicks add to list...
 $(document).on("click", ".add-to-list", function(event) {
@@ -204,11 +222,12 @@ $(document).on("click", ".add-to-list", function(event) {
 	// as an array
 	var val = $(this).attr("data-list").split("--,");
 	// pushing the array into the shopList var
-	shopList.push(val);
+	shopList = val;
 	// setting local storage item to the shop list
 	localStorage.setItem("shopping-list", JSON.stringify(shopList));
 	// change text letting user know it was successfully added to list
 	$(this).text("Successfully added to list!");
+	// running display list function
 	displayList();
 });
 
