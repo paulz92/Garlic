@@ -81,7 +81,7 @@ $("#submit-search").on("click", function() {
 				calorieInfo.addClass("recipe-info");
 				calorieInfo.text("Calories: " + 
 					Math.round(data[i].recipe.calories/data[i].recipe.yield));
-				// appending card title and recipe info to card text
+				// appending card title, breaks, and recipe info to card text
 				cardText.append(cardTitle);
 				cardText.append(pageBreak1);
 				cardText.append(servingInfo);
@@ -95,18 +95,6 @@ $("#submit-search").on("click", function() {
 				// creating card content div
 				var cardContent = $("<div>");
 				cardContent.addClass("card-content");
-				// creating an ingredient array for ingredients and
-				// creating a paragraph and appending to card content for
-				// each ingredient and pushing ingredient to list array
-				var list = [];
-				for (var j = 0; j < data[i].recipe.ingredientLines.length; j++) {
-					var ingredient = $("<p>");
-					ingredient.addClass("ingredient");
-					ingredient.text(data[i].recipe.ingredientLines[j]);
-					cardContent.append(ingredient);
-					// adding the two blank spices for future splicing of this array
-					list.push(data[i].recipe.ingredientLines[j] + "  ");
-				}
 				// appending card content to card div
 				card.append(cardContent);
 				// creating card action div
@@ -122,14 +110,23 @@ $("#submit-search").on("click", function() {
 				// var break
 				var pageBreak = $("<br>");
 				cardAction.append(pageBreak);
-				// add to list link, giving it a data attribute list equal
-				// to list array of ingredients
+				// add to list link with data count attribute equal to #ingredients
 				var addToList = $("<a>");
 				addToList.addClass("add-to-list");
 				addToList.attr("href", "#");
-				addToList.attr("data-list", list);
+				addToList.attr("data-count", data[i].recipe.ingredientLines.length);
 				addToList.text("Add to shopping list");
 				cardAction.append(addToList);
+				// creating a paragraph and appending to card content for
+				// each ingredient. also giving data-ing-i attr for each ingredient
+				// to the addToList link
+				for (var j = 0; j < data[i].recipe.ingredientLines.length; j++) {
+					var ingredient = $("<p>");
+					ingredient.addClass("ingredient");
+					ingredient.text(data[i].recipe.ingredientLines[j]);
+					cardContent.append(ingredient);
+					addToList.attr("data-ing-" + j, data[i].recipe.ingredientLines[j]);
+				}				
 				// appending card action to card div
 				card.append(cardAction);
 				// appending card div to column
@@ -226,13 +223,17 @@ $(document).on("click", ".remove-item", function(event) {
 $(document).on("click", ".add-to-list", function(event) {
 	// prevent default
 	event.preventDefault();
-	// splitting data attribute list at "  ,"" so that it saves
-	// as an array
-	var val = $(this).attr("data-list").split("  ,");
-	// setting shopList equal to the val array
-	shopList = val;
+	// count equal to number of ingredients assigned from ajax call
+	var count = $(this).attr("data-count");
+  // for each ingredient...
+	for (var k = 0; k < count; k++) {
+		// save ingredient in val var
+		var val = $(this).attr("data-ing-" + k);
+		// push the ingredient to the shopList array
+		shopList.push(val);
+	}
 	// setting local storage item to the shop list
-	localStorage.setItem("shopping-list", JSON.stringify(shopList));
+  localStorage.setItem("shopping-list", JSON.stringify(shopList));
 	// change text letting user know it was successfully added to list
 	$(this).text("Successfully added to list!");
 	// running display list function
