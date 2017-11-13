@@ -178,13 +178,13 @@ function displayList() {
 	$("#ingredient-data").html(""); // empties table html
 	var insideIngredients = JSON.parse(localStorage.getItem("shopping-list"));
 	// Checks to see if we have any ingredients in localStorage
-  // If we do, set the local insideIngredients variable to our todos
+  // If we do, set the local insideIngredients variable to our ingredients
   // Otherwise set the local insideIngredients variable to an empty array
   if (!Array.isArray(insideIngredients)) {
     insideIngredients = [];
   }
-  // render our insideList todos to the table on the page
-  for (var i = 0; i < insideIngredients.length; i++) {
+  // render our insideList ingredients to the table on the page
+  for (var i = 0; i < insideIngredients.length - 1; i++) {
   	var tr = $("<tr>"); // create table row
   	var tdIngredient = $("<td>"); // create table data for ingredient
   	tdIngredient.text(insideIngredients[i]); // td text is ingredient
@@ -226,7 +226,7 @@ $(document).on("click", ".add-to-list", function(event) {
 	event.preventDefault();
 	// splitting data attribute list at --, so that it saves 
 	// as an array
-	var val = $(this).attr("data-list").split("--,");
+	var val = $(this).attr("data-list").split("--");
 	// setting shopList equal to the val array
 	shopList = val;
 	// setting local storage item to the shop list
