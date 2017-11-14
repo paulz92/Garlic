@@ -33,6 +33,10 @@ body {
 /*Makes the Calorie and Serving Size on results smaller*/
 .recipe-info {
 	font-size: 15px;
+	background-color: #a5d6a7;
+	background-color: #a5d6a7;
+	border-radius: 20px;
+	padding: 5px 20px 5px 20px;
 }
 
 /*makes the ingredients font smaller in the search return*/
@@ -43,6 +47,9 @@ body {
 /*Bolds the recipe name on the results cards*/
 .recipe-name {
 	font-weight: bold;
+	background-color: #a5d6a7;
+	border-radius: 20px;
+	padding: 5px 20px 5px 20px;
 }
 
 /* changes the color of the submit buttons */

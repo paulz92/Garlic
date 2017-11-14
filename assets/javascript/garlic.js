@@ -66,12 +66,13 @@ $("#submit-search").on("click", function() {
 				var cardText = $("<div>");
 				cardText.addClass("card-title");
 				// creating card title equal to recipe name
+				var cardTitleDiv = $("<div>");
+				cardTitleDiv.addClass("recipe-name");
 				var cardTitle = $("<span>");
-				cardTitle.addClass("recipe-name");
 				cardTitle.text(data[i].recipe.label);
+				cardTitleDiv.append(cardTitle);
 				// creating page break
-				var pageBreak1 = $("<br>");
-				var pageBreak2 = $("<br>");
+				var pageBreak = $("<br>");
 				// creating serving info title
 				var servingInfo = $("<span>");
 				servingInfo.addClass("recipe-info");
@@ -82,10 +83,9 @@ $("#submit-search").on("click", function() {
 				calorieInfo.text("Calories: " + 
 					Math.round(data[i].recipe.calories/data[i].recipe.yield));
 				// appending card title, breaks, and recipe info to card text
-				cardText.append(cardTitle);
-				cardText.append(pageBreak1);
+				cardText.append(cardTitleDiv);
 				cardText.append(servingInfo);
-				cardText.append(pageBreak2);
+				cardText.append(pageBreak);
 				cardText.append(calorieInfo);
 				// appending recipe pic and title to card image div
 				cardImage.append(recipePic);
