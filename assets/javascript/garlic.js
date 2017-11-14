@@ -245,4 +245,55 @@ $(document).on("click", ".add-to-list", function(event) {
 
 // google maps api testing
 
-var placesApiKey = "AIzaSyDtjFC3Z2h2wmmCyFE0qlMq_mP6jar-ZTc";
+$("#submit-zip").on("click", function() {
+	var placesApiKey = "AIzaSyDtjFC3Z2h2wmmCyFE0qlMq_mP6jar-ZTc";
+	var zipCode = $("#zip-code").val().trim();
+	var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
+  	+ zipCode + "&key=" + placesApiKey;
+ 	console.log(zipCode);
+	console.log(queryURL);
+});
+
+var map;
+var infoWindow;
+
+function initMap() {
+  var raleigh = new google.maps.LatLng(35.7796, -78.6382);
+
+  map = new google.maps.Map(document.getElementById('googleMaps'), {
+    center: raleigh,
+    zoom: 14
+  });
+
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: raleigh,
+    radius: 5000,
+    type: ['grocery_or_supermarket']
+  }, callback);
+}
+
+function callback(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+
+// Run the initialize function when the window has finished loading.
+google.maps.event.addDomListener(window, 'load', initMap);

@@ -2,8 +2,8 @@ nav {
 	background-color: #a5d6a7;
 }
 
-nav ul a {
-	
+nav .nav-wrapper {
+	height: 64px;
 }
 
 .welcome-card {
@@ -16,11 +16,9 @@ nav ul a {
 	font-size: 15px;
 }
 
-
 /*Makes the Calorie and Serving Size on results smaller*/
 .recipe-info {
 	font-size: 15px;
-
 }
 
 /*makes the ingredients font smaller in the search return*/
@@ -38,19 +36,6 @@ nav ul a {
 	background-color: #a5d6a7;
 }
 
-/*body { 
-  background: url(../images/wallpaper.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-*/
-.form-group {
-	width: 650px;
-
-}
-
 body {
 	font-family: 'Raleway', sans-serif;
 }
@@ -58,14 +43,9 @@ body {
 #googleMaps {
 	border-width: 1px;
 	border-style: solid;
-	height: 300px;
-	width: 650px;
+	height: 400px;
+	width: 100%;
 	text-align: center;
-}
-
-.col-lg-7, .col-lg-5 {
-	padding-left: 75px;
-	padding-right: 75px;
 }
 
 .wrapper {
@@ -78,32 +58,37 @@ nav .brand-logo {
 	margin-left: 10px;
 }
 
-.carousel .carousel-slider {
-	margin-top: 5px;
-}
-
+/* top margin for image carousel */
 img.carousel-item {
 	margin-top: 8px;
 }
 
-
 /*Reveiws page header*/
 h3 {
-	width: 1000px;
+	width: 100%;
 	padding:10px;
 	background-color: #b0bec5;
 	color: white;
 	border-radius: 20px;
 	text-align: center;
-	margin-left: 90px
 }
 
-
+/* list page headers */
+h4 {
+	padding: 10px;
+	background-color: #b0bec5;
+	color: white;
+	border-radius: 20px;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+}
 
 p {
 	vertical-align: middle;
+	font-weight: bold;
+	font-size: 25px;
 }
-
 
 .panel-body {
 	background: whitesmoke;
@@ -122,20 +107,4 @@ p {
 
 .panel-primary {
   border-color: black;
-}
-
-h4 {
-	padding: 10px;
-	background-color: #b0bec5;
-	color: white;
-	border-radius: 20px;
-	text-align: center;
-	margin-left: 50px;
-	margin-right: 50px;
-}
-
-
-p {
-	font-weight: bold;
-	font-size: 25px;
 }
