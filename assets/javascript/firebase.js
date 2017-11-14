@@ -37,6 +37,7 @@
   	$("#comment").val("");
   	// $("#rating").val("");
 
+
   });
 
   database.ref().on("child_added", function(childSnapshot) {
@@ -47,10 +48,75 @@
   	var comment = childSnapshot.val().comment;
   	// var rating = childSnapshot.val().rating;
 
-  	$("#reviewDisplay").append("<p>" + firstName + " " + lastName + "</p><br>" +
-  							   "<p>" + recipe + " "  + "</p><br>" +
-  							   "<p>" + comment + "</p>");
+  	// $(".card-title").append("<p>" + firstName + " " + lastName + "</p><br>" +
+  	// 						   "<p>" + recipe + " "  + "</p>");
+   //  $(".card-content").append("<p>" + comment + "</p>");
+
+
+ // creating a function to display recipe data in a card
+      var createCard = function() {
+        // writing to browser
+        // creating card div
+        var card = $("<div>");
+        card.addClass("card");
+        // creating div for card title and info
+        var cardText = $("<div>");
+        cardText.addClass("card-title");
+        // creating card title equal to recipe name
+        var cardTitle = $("<span>");
+        cardTitle.addClass("user-name");
+        cardTitle.text(firstName + lastName + "<br>" + recipe);
+        // creating page break
+        var pageBreak1 = $("<br>");
+        var pageBreak2 = $("<br>");
+        // appending card title, breaks, and recipe info to card text
+        cardText.append(cardTitle);
+        cardText.append(pageBreak1);
+        // creating card content div
+        var cardContent = $("<div>");
+        cardContent.addClass("card-content");
+        cardContent.text(comment);
+        // appending card content to card div
+        card.append(cardContent);
+       
+        // creating a paragraph and appending to card content for
+        // each ingredient. also giving data-ing-i attr for each ingredient
+        // to the addToList link
+        // for (var j = 0; j < data[i].recipe.ingredientLines.length; j++) {
+        //   var ingredient = $("<p>");
+        //   ingredient.addClass("ingredient");
+        //   ingredient.text(data[i].recipe.ingredientLines[j]);
+        //   cardContent.append(ingredient);
+        //   addToList.attr("data-ing-" + j, data[i].recipe.ingredientLines[j]);
+        // }       
+       
+        // appending card div to column
+        column.append(card);
+      };
+
+      // for loop for the first 2 recipes to add to first recipe row
+      for (var i = 0; i < database; i++) {
+        // creating column div with materialize size
+        var column = $("<div>");
+        column.addClass("col s6");
+        // running create card function
+        createCard();
+        // appending column to recipes div
+        $(".reviews").append(column);
+      }
+
+
+
 
   }, function(errorObject) {
-  	console.log("errors handled: " + errorObject.code);
-  });
+  	   console.log("errors handled: " + errorObject.code);
+
+    });
+
+  
+
+  
+
+
+
+
