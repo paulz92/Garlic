@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<title>Reviews</title>
 	<!-- Compiled and minified CSS -->
@@ -12,73 +12,79 @@
 </head>
 <body>
   <nav>
-  	<div class="nav-wrapper">
+    <div class="nav-wrapper">
       <a href="#" class="brand-logo">GARLIC</a>
-    	<ul id="nav-mobile" class="right hide-on-med-and-down">
-       	<li><a href="index.html">Search</a></li>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">Search</a></li>
         <li><a href="list.html">List</a></li>
-       	<li><a href="review.html">Review</a></li>
-     	</ul>
+        <li><a href="review.html">Review</a></li>
+      </ul>
     </div>
   </nav>
-
-  <div class="row">
-	  <div class="col s12">
-      <h3>Tell Everyone What Your Favorite Recipes Were!</h3>
+  
+  <div class="container">
+    <!-- title row -->
+    <div class="row">
+  	  <div class="col s12">
+        <h3>Tell Everyone What Your Favorite Recipes Were!</h3>
+      </div>
     </div>
-  </div>
 
-  <div class="container">
+    <!-- form row -->
 	  <div class="row">
-    	<form class="col s12">
-      	<div class="row">
-        	<div class="input-field col s6">
-        		<input placeholder="First Name" id="first_name" type="text" class="validate">
-        		<label for="first_name">First Name</label>
+      <!-- form colum -->
+      <div class="col s12">
+      	<form>
+        	<div class="row">
+          	<div class="input-field col s6">
+          		<input placeholder="First Name" id="first_name" type="text" class="validate">
+          		<label for="first_name">First Name</label>
+          	</div>
+          	<div class="input-field col s6">
+          		<input id="last_name" type="text" class="validate">
+          		<label for="last_name">Last Name</label>
+          	</div>
         	</div>
-        	<div class="input-field col s6">
-        		<input id="last_name" type="text" class="validate">
-        		<label for="last_name">Last Name</label>
-        	</div>
-      	</div>
-        <div class="row">
-          <div class="input-field col s12">
-          	<input placeholder="Enter Recipe Name" id="recipeTried" type="text" class="validate">
-          	<label for="recipeTried">Recipe Tried</label>
+          <div class="row">
+            <div class="input-field col s12">
+            	<input placeholder="Enter Recipe Name" id="recipeTried" type="text" class="validate">
+            	<label for="recipeTried">Recipe Tried</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-          	<input placeholder="Enter Your Review of the Recipe" id="comment" type="text" class="validate">
-          	<label for="comment">Review</label>
+          <div class="row">
+            <div class="input-field col s12">
+            	<input placeholder="Enter Your Review of the Recipe" id="comment" type="text" class="validate">
+            	<label for="comment">Review</label>
+            </div>
           </div>
-        </div>
 
-	      <form action="#" id="rating">
-        	<p>
-		        <input type="checkbox" class="radio" id="box5" value="5" name="group1"/>
-		        <label for="box5">5 Stars</label> 
-		        <input type="checkbox" class="radio" id="box4" value="4" name="group1" />
-    		    <label for="box4">4 Stars</label>
-    		    <input type="checkbox" class="radio" id="box3" value="3" name="group1" />
-    		    <label for="box3" >3 Stars</label>
-    		    <input type="checkbox" class="radio" id="box2" value="2" name="group1" />
-    		    <label for="box2">2 Stars</label>
-    		    <input type="checkbox" class="radio" id="box1" value="1" name="group1" />
-    		    <label for="box1" >1 Stars</label>
-    	    </p>
-	      </form>
-      </form>
-	  </div>
-  </div>
-
-  <div class="container">
-	  <div class="row">
-		  <div class="button col s4 offset-s5">
-			  <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
- 			  </button>
-  	  </div>
-	  </div>
+  	      <form action="#" id="rating">
+          	<p>
+  		        <input type="checkbox" class="radio" id="box5" value="1" name="group1">
+  		        <label for="box5">5 Stars</label> 
+  		        <input type="checkbox" class="radio" id="box4" value="2" name="group1">
+      		    <label for="box4">4 Stars</label>
+      		    <input type="checkbox" class="radio" id="box3" value="3" name="group1">
+      		    <label for="box3" >3 Stars</label>
+      		    <input type="checkbox" class="radio" id="box2" value="4" name="group1">
+      		    <label for="box2">2 Stars</label>
+      		    <input type="checkbox" class="radio" id="box1" value="5" name="group1">
+      		    <label for="box1">1 Star</label>
+      	    </p>
+  	      </form>
+        </form>
+      <!-- close form column -->
+	    </div>
+    <!-- close form row -->
+    </div>
+    
+    <!-- submit button row -->
+    <div class="row">
+      <div class="button col s4 offset-s5">
+        <button class="btn waves-effect waves-light" id="submit-review" type="submit" name="action">Submit</button>
+      </div>
+    </div>
+  <!-- close container -->
   </div>
 
   <div class="container">
