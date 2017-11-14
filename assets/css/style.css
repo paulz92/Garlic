@@ -8,16 +8,22 @@ nav ul a {
 
 
 /*body { 
-  background: url(../images/wallpaper.jpg) no-repeat center center fixed; 
+  background-color: floralwhite; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-*/
-.form-group {
-	width: 650px;
+}*/
 
+span.stars, span.stars span {
+    display: block;
+    background: url(../images/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
 }
 
 body {
@@ -30,6 +36,7 @@ body {
 	height: 300px;
 	width: 650px;
 	text-align: center;
+	background-color: white;
 }
 
 .col-lg-7, .col-lg-5 {
@@ -94,12 +101,18 @@ h4{
 	text-align: center;
 	margin-left: 50px;
 	margin-right: 50px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
 }
 
 .carousel carousel-slider{
 	margin-top: 5px;
 }
 
+.form-control {
+	border: 1px solid black;
+}
 
 p {
 	font-weight: bold;
