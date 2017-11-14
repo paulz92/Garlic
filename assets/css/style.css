@@ -1,13 +1,27 @@
+/* navbar background color */
 nav {
 	background-color: #a5d6a7;
 }
 
-nav .nav-wrapper {
-	height: 64px;
+/* moves GARLIC on nav bar to the right */
+nav .brand-logo {
+	margin-left: 10px;
 }
 
+/* google fonts */
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+/* height of welcome card */
 .welcome-card {
-	height: 392px;
+	height: 400px;
+}
+
+/* border radius and margin for carousel and welcome card */
+.carousel, .welcome-card {
+	border-radius: 20px;
+	margin-top: 16px;
 }
 
 /*Welcome to garlic card on search/ home screen*/
@@ -23,44 +37,26 @@ nav .nav-wrapper {
 
 /*makes the ingredients font smaller in the search return*/
 .ingredient {
-	font-size:17px;
+	font-size: 17px;
 }
 
 /*Bolds the recipe name on the results cards*/
 .recipe-name {
-	font-weight:bold;
+	font-weight: bold;
 }
 
-/*changes the color of the submit button*/
-#submit {
+/* changes the color of the submit buttons */
+#submit-search, #submit-zip, #submit-review {
 	background-color: #a5d6a7;
 }
 
-body {
-	font-family: 'Raleway', sans-serif;
-}
-
+/* google maps border and sizing */
 #googleMaps {
 	border-width: 1px;
 	border-style: solid;
 	height: 400px;
-	width: 100%;
-	text-align: center;
-}
-
-.wrapper {
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-
-/* moves GARLIC on nav bar to the right*/
-nav .brand-logo {
-	margin-left: 10px;
-}
-
-/* top margin for image carousel */
-img.carousel-item {
-	margin-top: 8px;
+	width: 97%;
+	margin-left: 12px;
 }
 
 /*Reveiws page header*/
@@ -80,31 +76,36 @@ h4 {
 	color: white;
 	border-radius: 20px;
 	text-align: center;
-	margin-left: 0px;
-	margin-right: 0px;
 }
 
+/* paragraph fonts */
 p {
 	vertical-align: middle;
 	font-weight: bold;
 	font-size: 25px;
 }
 
+/* pandle body background color and font size */
 .panel-body {
 	background: whitesmoke;
 	font-size: 18px;
 }
 
+/* panel title font size */
 .panel-title {
 	font-size: 25px;
 }
 
+/* list panel heading font color, background color, border color */
 .panel-primary>.panel-heading {
   color: #fff;
   background-color: #a5d6a7;
   border-color: #a5d6a7;
 }
 
+/* list panel border */
 .panel-primary {
   border-color: black;
+  width: 97%;
+  margin-left: 12px;
 }
