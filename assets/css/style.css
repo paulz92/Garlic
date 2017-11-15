@@ -112,6 +112,12 @@ p {
 /* panel title font size */
 .panel-title {
 	font-size: 25px;
+	padding:10px;
+}
+
+/*Ingredient Table*/
+#ingredient-table{
+	margin-top: -10px;
 }
 
 /* list panel heading font color, background color, border color */
@@ -127,3 +133,13 @@ p {
   width: 97%;
   margin-left: 12px;
 }
+
+
+
+
+
+
+
+
+
+
