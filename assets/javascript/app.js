@@ -18,7 +18,13 @@ $(document).ready(function(){
 	    $('input[name="' + this.name + '"]').not(this).prop('checked', false);
 	});
 
-	$.fn.stars = function() {
+
+	$(function() {
+    $('span.stars').stars();
+	});
+});
+
+    $.fn.stars = function() {
     return $(this).each(function() {
       // Get the value
       var val = parseFloat($(this).html());
@@ -29,9 +35,4 @@ $(document).ready(function(){
       // Replace the numerical value with stars
       $(this).html($span);
     });
-	}
-
-	$(function() {
-    $('span.stars').stars();
-	});
-});
+    }

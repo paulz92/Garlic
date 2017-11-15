@@ -65,6 +65,7 @@ database.ref().on("child_added", function(childSnapshot) {
     var starRating = $("<span>")
     starRating.addClass("stars");
     starRating.text(rating);
+    starRating.stars();
     // creating card title equal to recipe made
     var cardRecipe = $("<span>");
     cardRecipe.addClass("recipe-made");
@@ -87,6 +88,8 @@ database.ref().on("child_added", function(childSnapshot) {
      
     // appending card div to column
     $(".reviews").append(card);
+
+
   };
 
   createCard();
