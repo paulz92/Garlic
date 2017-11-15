@@ -12,21 +12,21 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-$("#submit").on("click", function(event) {
+$("#submit-review").on("click", function(event) {
   event.preventDefault();
 
 	var firstName = $("#first_name").val().trim();
  	var lastName = $("#last_name").val().trim();
  	var recipe = $("#recipeTried").val().trim();
  	var comment = $("#comment").val().trim();
- 	// var rating = $("#rating").val().trim();
+ 	var rating = $('input[name="group1"]:checked').attr("value");
 
  	var review = {
  		firstName: firstName,
  		lastName: lastName,
  		recipe: recipe,
  		comment: comment,
- 		// rating: rating
+ 		rating: rating
  	};
 
  	database.ref().push(review);
@@ -35,7 +35,7 @@ $("#submit").on("click", function(event) {
  	$("#last_name").val("");
  	$("#recipeTried").val("");
  	$("#comment").val("");
- 	// $("#rating").val("");
+ 	$('input[type=checkbox]').prop('checked', false);
 });
 
 database.ref().on("child_added", function(childSnapshot) {
@@ -44,8 +44,8 @@ database.ref().on("child_added", function(childSnapshot) {
  	var lastName = childSnapshot.val().lastName;
  	var recipe = childSnapshot.val().recipe;
  	var comment = childSnapshot.val().comment;
-
- 	// var rating = childSnapshot.val().rating;
+  var rating = childSnapshot.val().rating;
+  
   
 
   // creating a function to display recipe data in a card
@@ -61,6 +61,10 @@ database.ref().on("child_added", function(childSnapshot) {
     var cardTitle = $("<span>");
     cardTitle.addClass("user-name");
     cardTitle.text(firstName + " " + lastName);
+
+    var starRating = $("<span>")
+    starRating.addClass("stars");
+    starRating.text(rating);
     // creating card title equal to recipe made
     var cardRecipe = $("<span>");
     cardRecipe.addClass("recipe-made");
@@ -70,6 +74,7 @@ database.ref().on("child_added", function(childSnapshot) {
     var pageBreak2 = $("<br>");
     // appending card title, breaks, and recipe info to card text
     cardText.append(cardTitle);
+    cardText.append(starRating);
     cardText.append(pageBreak1);
     cardText.append(cardRecipe);
     // creating card content div
