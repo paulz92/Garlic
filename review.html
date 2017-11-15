@@ -49,11 +49,30 @@
                 <label for="last_name">Last Name</label>
             </div>
           </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <input placeholder="Enter Recipe Name" id="recipeTried" type="text" class="validate">
-            <label for="recipeTried">Recipe Tried</label>
-        </div>
+
+  	      <form action="#" id="rating">
+          	<p>
+  		        <input type="checkbox" class="radio" id="box5" value="1" name="group1">
+  		        <label for="box5">5 Stars</label> 
+  		        <input type="checkbox" class="radio" id="box4" value="2" name="group1">
+      		    <label for="box4">4 Stars</label>
+      		    <input type="checkbox" class="radio" id="box3" value="3" name="group1">
+      		    <label for="box3" >3 Stars</label>
+      		    <input type="checkbox" class="radio" id="box2" value="4" name="group1">
+      		    <label for="box2">2 Stars</label>
+      		    <input type="checkbox" class="radio" id="box1" value="5" name="group1">
+      		    <label for="box1">1 Star</label>
+      	    </p>
+  	      </form>
+          <span class="stars">5</span>
+          <span class="stars">4</span>
+          <span class="stars">3</span>
+          <span class="stars">2</span>
+          <span class="stars">1</span>  
+        </form>
+      <!-- close form column -->
+	    </div>
+    <!-- close form row -->
     </div>
     <div class="row">
         <div class="input-field col s12">
@@ -112,8 +131,8 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- Compiled and minified JavaScript for materialize -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<!-- loading places library  -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtjFC3Z2h2wmmCyFE0qlMq_mP6jar-ZTc&libraries=places"></script>
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 <!-- local js files -->
 <script src="assets/javascript/firebase.js" type="text/javascript"></script>
 <script src="assets/javascript/garlic.js" type="text/javascript"></script>

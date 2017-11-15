@@ -13,14 +13,6 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-/*body { 
-  background-color: floralwhite; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
-
 span.stars, span.stars span {
     display: block;
     background: url(../images/stars.png) 0 -16px repeat-x;
@@ -29,8 +21,12 @@ span.stars, span.stars span {
 }
 
 span.stars span {
-    background-position: 0 0;
+  background-position: 0 0;
+}
 
+/* height of welcome card */
+.welcome-card {
+	height: 400px;
 }
 
 /*Welcome to garlic card on search/ home screen*/
