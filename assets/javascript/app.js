@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	// full width for carousel slider
 	$('.carousel.carousel-slider').carousel({fullWidth: true});
 
@@ -34,4 +35,3 @@ $(document).ready(function(){
     $('span.stars').stars();
 	});
 });
->>>>>>> infomarkers
