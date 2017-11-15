@@ -280,7 +280,7 @@ $("#submit-zip").on("click", function() {
     function initializeMap() {
    		map = new google.maps.Map(document.getElementById('googleMaps'), {
       	center: latLong,
-      	zoom: 12
+      	zoom: 13
    		});
    		// initialize info window functionality	
    		infowindow = new google.maps.InfoWindow();
@@ -306,9 +306,13 @@ $("#submit-zip").on("click", function() {
       	map: map,
       	position: place.geometry.location
     	});
+    	// creating a content var which will be the info marker content
+    	var content = "<div><strong>" + place.name 
+    		+ "</strong></div><br><div>" + place.vicinity 
+    		+ "</div><br><div>Rating: " + place.rating + "/5</div>";
    		// opens info window when location marker clicked
    		google.maps.event.addListener(marker, 'click', function() {
-     		infowindow.setContent(place.name);
+     		infowindow.setContent(content);
      		infowindow.open(map, this);
    		});
  		};
