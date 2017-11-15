@@ -14,10 +14,10 @@ body {
 }
 
 span.stars, span.stars span {
-    display: block;
-    background: url(../images/stars.png) 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
+  display: block;
+  background: url(../images/stars.png) 0 -16px repeat-x;
+  width: 80px;
+  height: 16px;
 }
 
 span.stars span {
@@ -29,20 +29,25 @@ span.stars span {
 	height: 400px;
 }
 
+/* border radius and margin for carousel and welcome card */
+.carousel, .welcome-card {
+	border-radius: 20px;
+	margin-top: 16px;
+}
+
 /*Welcome to garlic card on search/ home screen*/
 .introCard {
 	font-weight: normal;
 	font-size: 15px;
 }
 
-#googleMaps {
-	border-width: 1px;
-	border-style: solid;
-	height: 300px;
-	width: 650px;
-	text-align: center;
-	background-color: white;
-
+/*Makes the Calorie and Serving Size on results smaller*/
+.recipe-info {
+	font-size: 15px;
+	background-color: #a5d6a7;
+	background-color: #a5d6a7;
+	border-radius: 20px;
+	padding: 5px 20px 5px 20px;
 }
 
 /*makes the ingredients font smaller in the search return*/
@@ -118,33 +123,7 @@ p {
 
 /* list panel border */
 .panel-primary {
-
-    border-color: black;
-}
-
-h4{
-	padding:10px;
-	background-color: #b0bec5;
-	color: white;
-	border-radius: 20px;
-	text-align: center;
-	margin-left: 50px;
-	margin-right: 50px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: black;
-}
-
-.carousel carousel-slider{
-	margin-top: 5px;
-}
-
-.form-control {
-	border: 1px solid black;
-}
-
-p {
-	font-weight: bold;
-	font-size: 25px;
-
+  border-color: black;
+  width: 97%;
+  margin-left: 12px;
 }
