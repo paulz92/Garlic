@@ -1,11 +1,17 @@
-nav{
+/* navbar background color */
+nav {
 	background-color: #a5d6a7;
 }
 
-nav ul a {
-	
+/* moves GARLIC on nav bar to the right */
+nav .brand-logo {
+	margin-left: 10px;
 }
 
+/* google fonts */
+body {
+	font-family: 'Raleway', sans-serif;
+}
 
 /*body { 
   background-color: floralwhite; 
@@ -24,10 +30,13 @@ span.stars, span.stars span {
 
 span.stars span {
     background-position: 0 0;
+
 }
 
-body {
-	font-family: 'Raleway', sans-serif;
+/*Welcome to garlic card on search/ home screen*/
+.introCard {
+	font-weight: normal;
+	font-size: 15px;
 }
 
 #googleMaps {
@@ -37,59 +46,83 @@ body {
 	width: 650px;
 	text-align: center;
 	background-color: white;
+
 }
 
-.col-lg-7, .col-lg-5 {
-	padding-left: 75px;
-	padding-right: 75px;
+/*makes the ingredients font smaller in the search return*/
+.ingredient {
+	font-size: 17px;
 }
 
-.wrapper {
-	margin-top: 40px;
-	margin-bottom: 40px;
+/*Bolds the recipe name on the results cards*/
+.recipe-name {
+	font-weight: bold;
+	background-color: #a5d6a7;
+	border-radius: 20px;
+	padding: 5px 20px 5px 20px;
 }
 
-nav .brand-logo {
-	margin-left: 10px;
+/* changes the color of the submit buttons */
+#submit-search, #submit-zip, #submit-review {
+	background-color: #a5d6a7;
 }
 
-.carousel carousel-slider{
-	margin-top: 5px;
+/* google maps border and sizing */
+#googleMaps {
+	border-width: 1px;
+	border-style: solid;
+	height: 400px;
+	width: 97%;
+	margin-left: 12px;
 }
 
-h3{
-	width: 1000px;
+/*Reveiws page header*/
+h3 {
+	width: 100%;
 	padding:10px;
 	background-color: #b0bec5;
 	color: white;
 	border-radius: 20px;
 	text-align: center;
-	margin-left: 90px
 }
 
+/* list page headers */
+h4 {
+	padding: 10px;
+	background-color: #b0bec5;
+	color: white;
+	border-radius: 20px;
+	text-align: center;
+}
 
-
-p{
+/* paragraph fonts */
+p {
 	vertical-align: middle;
+	font-weight: bold;
+	font-size: 25px;
 }
 
-
+/* pandle body background color and font size */
 .panel-body {
 	background: whitesmoke;
 	font-size: 18px;
 }
 
+/* panel title font size */
 .panel-title {
 	font-size: 25px;
 }
 
+/* list panel heading font color, background color, border color */
 .panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #a5d6a7;
-    border-color: #a5d6a7;
+  color: #fff;
+  background-color: #a5d6a7;
+  border-color: #a5d6a7;
 }
 
+/* list panel border */
 .panel-primary {
+
     border-color: black;
 }
 
@@ -117,4 +150,5 @@ h4{
 p {
 	font-weight: bold;
 	font-size: 25px;
+
 }

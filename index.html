@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
 	<!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<title>Garlic</title>
-	<!-- Compiled and minified CSS -->
+	<!-- Compiled and minified CSS for materialize -->
  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ 	<!-- google fonts -->
+ 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<!-- linking the style sheet -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 </head>
@@ -16,33 +18,33 @@
       <a href="#" class="brand-logo">GARLIC</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="index.html">Search</a></li>
-        <li><a href="review.html">Review</a></li>
         <li><a href="list.html">List</a></li>
+        <li><a href="review.html">Review</a></li>
       </ul>
     </div>
   </nav>
 
 	<div class="row">
 		<div class="col s4">
-      <div class="card y blue-grey lighten-3">
+      <div class="card y blue-grey lighten-3  welcome-card">
         <div class="card-content white-text">
           <span class="card-title"><strong>Welcome to Garlic!</strong></span>
          	<br>
-          <p>Garlic allows you to search thousands of recipes to find the perfect dish for dinner, family gatherings, and more!</p>
+          <p class="introCard">Garlic allows you to search thousands of recipes to find the perfect dish for dinner, family gatherings, and more!</p>
 					<br>
-          <p>Extract all of the ingredients from the recipe and put them on your customized grocery list to make your trip to the store fast and efficient!</p>
+          <p class="introCard">Extract all of the ingredients from the recipe and put them on your customized grocery list to make your trip to the store fast and efficient!</p>
           <br>
-          <p>Not local? No problem! Use our easy grocery store search feature to find the closet grocery store to you!</p>
+          <p class="introCard">Not local? No problem! Use our easy grocery store search feature to find the closest grocery store to you!</p>
         </div>
       </div>
     </div>
 
 		<div class="col s8">		
 	    <div class="carousel carousel-slider">
-			  <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/365/food/1"></a>
-			  <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/365/food/2"></a>
-			  <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/365/food/3"></a>
-			  <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/365/food/4"></a>
+			  <img class="carousel-item" src="assets/images/food1.jpg">
+			  <img class="carousel-item" src="assets/images/food2.jpg">
+			  <img class="carousel-item" src="assets/images/food3.jpg">
+			  <img class="carousel-item" src="assets/images/food4.jpg">
   		</div>
 	  </div>
  	</div>
@@ -80,7 +82,7 @@
 			    <option value="fish-free">Fish-Free</option>
 			    <option value="shellfish-free">Shellfish-Free</option>
 				</select>
-			    <label>Health Labels</label>
+			    <label>Health Labels - Please Select One Option</label>
   		</div>
 
 			<div class="input-field col s6 diet">
@@ -89,12 +91,12 @@
 			    <option value="">None</option>
 			    <option value="balanced">Balanced</option>
 			    <option value="high-protein">High-Protein</option>
-			    <option value="high fiber">High Fiber</option>
+			    <option value="high fiber">High-Fiber</option>
 			    <option value="low-fat">Low-Fat</option>
 			    <option value="low-carb">Low-Carb</option>
 			    <option value="low-sodium">Low-Sodium</option>
 				</select>
-			    <label>Dietary Labels</label>
+			    <label>Dietary Labels - Please Select One Option</label>
   		</div>
 		</div>
 	</div>
@@ -104,15 +106,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="button col s4 offset-s5">
-				<button class="btn waves-effect waves-light" id="submit" type="submit" name="action">Submit</button>
+				<button class="btn waves-effect waves-light" id="submit-search" type="submit" name="action">Submit</button>
   		</div>
 		</div>
 	</div>
 
-	<!-- <br><br><br><br><br><br><br><br><br><br> -->
+	<div class="container">
+		<div class="row recipes-1">
+      <!-- ajax call from JS will go here -->
+    </div>
+	</div>
 
 	<div class="container">
-		<div class="row recipes">
+		<div class="row recipes-2">
       <!-- ajax call from JS will go here -->
     </div>
 	</div>
