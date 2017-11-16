@@ -45,23 +45,21 @@ database.ref().on("child_added", function(childSnapshot) {
  	var recipe = childSnapshot.val().recipe;
  	var comment = childSnapshot.val().comment;
   var rating = childSnapshot.val().rating;
-  
-  
 
   // creating a function to display recipe data in a card
   var createCard = function() {
     // writing to browser
     // creating card div
     var card = $("<div>");
-    card.addClass("card");
+    card.addClass("card review-card");
     // creating div for card title and info
     var cardText = $("<div>");
-    cardText.addClass("card-title");
+    cardText.addClass("card-title review-title");
     // creating card title equal to recipe name
     var cardTitle = $("<span>");
     cardTitle.addClass("user-name");
     cardTitle.text(firstName + " " + lastName);
-
+    // putting star ratings in
     var starRating = $("<span>")
     starRating.addClass("stars");
     starRating.text(rating);
@@ -74,22 +72,20 @@ database.ref().on("child_added", function(childSnapshot) {
     var pageBreak1 = $("<br>");
     var pageBreak2 = $("<br>");
     // appending card title, breaks, and recipe info to card text
-    cardText.append(cardTitle);
-    cardText.append(starRating);
-    cardText.append(pageBreak1);
     cardText.append(cardRecipe);
+    cardText.append(pageBreak1);
+    cardText.append(cardTitle);
+    cardText.append(pageBreak2);
+    cardText.append(starRating);
     // creating card content div
     var cardContent = $("<div>");
-    cardContent.addClass("card-content");
+    cardContent.addClass("card-content review-content");
     cardContent.text(comment);
     // appending card content to card div
     card.append(cardText);
     card.append(cardContent);  
-     
     // appending card div to column
-    $(".reviews").append(card);
-
-
+    $(".reviews").prepend(card);
   };
 
   createCard();
