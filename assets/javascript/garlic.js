@@ -41,6 +41,10 @@ $("#submit-search").on("click", function() {
 		console.log(response);
 		// if search populates no recipes
 		if (response.hits.length === 0) {
+			// clearing html for recipes-1 and recipes-2
+			$(".recipes-1").html("");
+			$(".recipes-2").html("");
+			// writing no recipes found	
 			$(".recipes-1").text("No recipes found, please search again. " 
 				+ "If not filtering by health or diet labels, please select 'None'.");
 		} // if search populates recipes

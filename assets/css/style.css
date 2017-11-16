@@ -13,6 +13,7 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+/* review stars displays */
 span.stars, span.stars span {
   display: block;
   background: url(../images/stars.png) 0 -16px repeat-x;
@@ -20,6 +21,7 @@ span.stars, span.stars span {
   height: 16px;
 }
 
+/* review stars position */
 span.stars span {
   background-position: 0 0;
 }
@@ -113,11 +115,11 @@ p {
 /* panel title font size */
 .panel-title {
 	font-size: 25px;
-	padding:10px;
+	padding: 10px;
 }
 
 /*Ingredient Table*/
-#ingredient-table{
+#ingredient-table {
 	margin-top: -10px;
 }
 
@@ -135,55 +137,62 @@ p {
   margin-left: 12px;
 }
 
-/*styling the results card*/
-.card{
+/*styling the reviews card*/
+.review-card {
 	background-color: #a5d6a7;
 	border-radius:20px;
 }
 
 /*styles the name of the recipe*/
-span.recipe-made{
+span.user-name {
 	font-size: 17px;
 	font-weight: bolder;
 	margin-left: 20px;
+	line-height: 2.5em;
 }
 
 /*styles the name of the user/reviewer*/
-span.user-name{ 
-	margin-left:20px;
+span.recipe-made { 
+	margin-left: 20px;
 	text-decoration: underline;
 }
 
 /*styles the rating/stars*/
-span.stars{
-	margin-left:20px;
+span.stars {
+	margin-left: 20px;
 }
 
-/*styles the top section of the card to include the user, recipe name and stars*/
-div.card-title{
-	padding-top:20px;
-	padding-bottom: 12px;
+/* styles the top section of the card to include the user, 
+   recipe name and stars */
+div.review-title {
+	padding-top: 16px;
+	padding-bottom: 20px;
 }
 
 /*styles the review of the recipe*/
-div.card-content{
+.review-content {
 	border-top: thick dotted white;
+	padding: 12px 20px 12px 20px;
 }
 
-/*changes the color of the footer*/
-.page-footer{
+/* changes the color of the footer */
+.page-footer {
+	background-color: #a5d6a7;
+	padding-top: 5px;
+}
+
+ /* enures entire footer is same background color */
+.page-footer .footer-copyright {
 	background-color: #a5d6a7;
 }
 
-/*pushes the Edamam logo to the right*/
-#edamam-badge{
-	margin-left:500px;
+/* vertical center coyright text */
+#copyright {
+	position: relative;
+	top: 10px;
 }
 
-
-
-
-
-
-
-
+/*pushes the Edamam logo to the right*/
+#edamam-badge {
+	float: right;
+}
