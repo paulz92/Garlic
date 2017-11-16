@@ -3,6 +3,11 @@ nav {
 	background-color: #a5d6a7;
 }
 
+.logo-pic {
+	height: 100%;
+	margin-left: 12px;
+}
+
 /* moves GARLIC on nav bar to the right */
 nav .brand-logo {
 	margin-left: 10px;
