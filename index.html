@@ -19,6 +19,8 @@
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </head>
 <body>
+<!-- wrap needed for fixed footer -->
+<div class="wrap">	
   <nav>
     <div class="nav-wrapper">
     	<img class="logo-pic" src="assets/images/garlicpic.png" alt="logo">
@@ -125,27 +127,29 @@
 	</div>
 
 	<div class="container">
-		<div class="row recipes-2">
+		<div class="row recipes-2 bottom-row">
       <!-- ajax call from JS will go here -->
     </div>
 	</div>
+<!-- close fixed footer wrap -->
+</div>
 
-  <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-        <span id="copyright">© 2017 Copyright GARLIC</span>
-        <a id="edamam-badge" data-color="light"></a>
-      </div>
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+      <span id="copyright">© 2017 Copyright GARLIC</span>
+      <a id="edamam-badge" data-color="light"></a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<!-- Compiled and minified JavaScript for materialize -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<!-- local js files -->
-	<script src="assets/javascript/garlic.js" type="text/javascript"></script>
-	<script src="assets/javascript/app.js" type="text/javascript" ></script>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Compiled and minified JavaScript for materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- local js files -->
+<script src="assets/javascript/garlic.js" type="text/javascript"></script>
+<script src="assets/javascript/app.js" type="text/javascript" ></script>
 
 </body>
 </html>
