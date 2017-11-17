@@ -19,6 +19,25 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+/* ensures wrap is at least the size of viewport-footer size = footer 
+   pushed to bottom on all pages if not enough content to naturally 
+   do so */
+.wrap {
+	min-height: calc(100vh - 80.6px);
+}
+
+/* removing margin from the bottom row of each page for the footer 
+   calculation */
+.bottom-row {
+	margin-bottom: 0px
+}
+
+/* defining footer height and giving it a top margin for spacing */
+footer {
+	height: 70.6px;
+	margin: 10px 0px 0px 0px;
+}
+
 /* review stars displays */
 span.stars, span.stars span {
   display: block;
