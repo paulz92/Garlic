@@ -11,6 +11,8 @@ $(document).ready(function(){
 
 	autoplay();
 
+	// needed for collapsible links on med and smaller screens
+	$(".button-collapse").sideNav();
 
 	$('select').material_select();
 
