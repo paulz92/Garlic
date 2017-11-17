@@ -145,8 +145,8 @@ p {
 
 /*styling the reviews card*/
 .review-card {
-	background-color: #a5d6a7;
-	border-radius:20px;
+	background: whitesmoke;
+	border-radius: 20px;
 }
 
 /*styles the name of the recipe*/
@@ -177,7 +177,7 @@ div.review-title {
 
 /*styles the review of the recipe*/
 .review-content {
-	border-top: thick dotted white;
+	border-top: thick dotted #a5d6a7;
 	padding: 12px 20px 12px 20px;
 }
 
