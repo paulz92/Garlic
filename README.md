@@ -11,9 +11,6 @@ Our motivation for this project is to simplify the process of recipe search to c
 Our custom ingredient search, as well as health and dietary restriction dropdowns, allow the users to search for a recipe that fits their needs. 
 
 New in town? No problem. Search by location and find the grocery stores nearest you to by the items on your list.
- 
-## Screenshots
-Include logo/demo screenshot etc.
 
 ## Tech/framework used
 
@@ -63,9 +60,10 @@ Made a recipe? Loved it? Leave a 5 star review on the review page to let others 
 - [Claire Pate](https://github.com/lcpate)
 - [Darren Evans](https://github.com/darrenrevans10)
 
-Teachers and TAs at UNC Coding Boot Camp
-Edamam Recipe Search API
-Google Maps/Places API
-Materialize docs
-W3 schools
-StackOverflow
+
+- Teachers and TAs at UNC Coding Boot Camp
+- Edamam Recipe Search API
+- Google Maps/Places API
+- Materialize docs
+- W3 schools
+- StackOverflow
