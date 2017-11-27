@@ -60,7 +60,7 @@ Made a recipe? Loved it? Leave a 5 star review on the review page to let others 
 - [Claire Pate](https://github.com/lcpate)
 - [Darren Evans](https://github.com/darrenrevans10)
 
-
+<b>Other</b>
 - Teachers and TAs at UNC Coding Boot Camp
 - Edamam Recipe Search API
 - Google Maps/Places API
