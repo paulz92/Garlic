@@ -9,25 +9,29 @@ $("#submit-search").on("click", function() {
 	var numberResults = 4;
 	// initialize query URL
 	var queryURL = "";
+	var appKey = "3c92234e0bf04fee20a6474aab6db647";
+	var appID = "8f55b5fa";
 
 	// if statement for determining which query url to use
 	// if health/diet selected as none...
 	if (healthSearch === "" && dietSearch === "") {
-		queryURL = "https://api.edamam.com/search?q=" + foodSearch
-		+ "&from=0&to=" + numberResults;
+		queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=" 
+		+ appID + "&app_key=" + appKey + "&from=0&to=" + numberResults;
 		// if health is selected but diet is not
 	} else if (healthSearch != "" && dietSearch === "") {
-		queryURL = "https://api.edamam.com/search?q=" + foodSearch
-		+ "&health=" + healthSearch + "&from=0&to=" + numberResults;
+		queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=" 
+		+ appID + "&app_key=" + appKey + "&health=" + healthSearch + "&from=0&to=" 
+		+ numberResults;
 		// if diet is selected but health is not
 	} else if (healthSearch === "" && dietSearch != "") {
-		queryURL = "https://api.edamam.com/search?q=" + foodSearch 
-		+ "&diet=" + dietSearch +"&from=0&to=" + numberResults;
+		queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=" 
+		+ appID + "&app_key=" + appKey + "&diet=" + dietSearch +"&from=0&to=" 
+		+ numberResults;
 		// if both diet and health is selected
 	} else if (healthSearch != "" && dietSearch != "") {
-		queryURL = "https://api.edamam.com/search?q=" + foodSearch
-		+ "&health=" + healthSearch + "&diet=" + dietSearch 
-		+"&from=0&to=" + numberResults;
+		queryURL = "https://api.edamam.com/search?q=" + foodSearch + "&app_id=" 
+		+ appID + "&app_key=" + appKey + "&health=" + healthSearch + "&diet=" 
+		+ dietSearch +"&from=0&to=" + numberResults;
 	}
 
 	// jquery ajax method
