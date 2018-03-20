@@ -148,6 +148,10 @@ p {
 	margin-top: -10px;
 }
 
+.grocery-list-root {
+	margin-bottom: 30px !important;
+}
+
 /* list panel heading font color, background color, border color */
 .panel-primary>.panel-heading {
   color: #fff;
